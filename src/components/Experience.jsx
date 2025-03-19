@@ -5,8 +5,8 @@ const Experience = () => {
     <section id="experience" className="experience-section">
       <h2>Experience</h2>
       <p>
-        To see my projects and contributions. Plese visit my git hub account.
-        Thanks
+        Please visit my Github account to see my projects and contributions.
+        Thanks.
       </p>
       <div className="github-contributions">
         <div>

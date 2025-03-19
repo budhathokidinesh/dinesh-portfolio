@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <p>
         &copy; {new Date().getFullYear()} Dinesh Budhathoki. All rights
-        reserved.
+        reserved.🚀
       </p>
       <div className="social-icons">
         <a

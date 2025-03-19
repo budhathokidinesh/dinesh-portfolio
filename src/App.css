@@ -154,6 +154,11 @@ nav a:hover {
 .about a:hover {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .about {
+    margin-top: 120px;
+  }
+}
 /* Skills  */
 .skills {
   padding: 40px 20px;
@@ -203,32 +208,34 @@ nav a:hover {
 .skill-item:hover span {
   color: #121212;
 }
+@media (max-width: 768px) {
+  .skills {
+    padding: 0 20px;
+  }
+}
 
-//* General styling for the experience section */
+/* Experiencce section  */
 .experience-section {
   padding: 40px 20px;
-  background-color: #f9f9f9;
+  background-color: #121212;
   text-align: center;
   font-family: Arial, sans-serif;
 }
 
-/* Styling for the heading inside experience section */
 .experience-section h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #00d8ff;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
-/* Styling for the paragraph */
 .experience-section p {
   font-size: 1.1rem;
-  color: #555;
+  color: white;
   margin-bottom: 40px;
   line-height: 1.6;
 }
 
-/* Styling for the GitHub contributions container */
 .github-contributions {
   background-color: #fff;
   padding: 30px;
@@ -239,7 +246,6 @@ nav a:hover {
   text-align: center;
 }
 
-/* Heading inside the GitHub contributions box */
 .github-contributions h2 {
   font-size: 2rem;
   color: #333;
@@ -247,7 +253,6 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* Styling for the GitHub contributions chart image */
 .github-contributions img {
   width: 100%;
   max-width: 800px;
@@ -256,7 +261,6 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-/* Styling for the link to GitHub profile */
 .github-profile-link {
   display: inline-block;
   background-color: #216e39;
@@ -274,7 +278,6 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .experience-section h2 {
     font-size: 2rem;
@@ -293,39 +296,228 @@ nav a:hover {
     padding: 10px 20px;
   }
 }
+/* Projects  */
+.projects-section {
+  padding: 60px 20px;
+  background-color: #121212;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.projects-section h2 {
+  font-size: 2.5rem;
+  color: #00d8ff;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 10px;
+}
+.project-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+.project-card h4 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.project-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: center;
+}
+.project-screenshot {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.project-link {
+  display: inline-block;
+  background-color: #216e39;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.project-link:hover {
+  background-color: #39d353;
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .projects-section h2 {
+    font-size: 2rem;
+    padding: 0 20px;
+  }
 
-.contact form {
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-link {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+/* Education section  */
+.education-section {
+  padding: 50px;
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.education-section h2 {
+  font-size: 2rem;
+  color: #00d8ff;
+  margin-bottom: 30px;
+}
+
+.education-timeline {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.contact input,
-.contact textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.education-item {
+  background: #fff;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
+}
+
+.education-details h3 {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.education-details h4 {
   font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
 }
 
-.contact button {
-  padding: 10px 20px;
-  background: #333;
+.year {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.education-details p {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 10px;
+}
+
+/* contact section  */
+.contact {
+  padding: 50px;
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  color: #00d8ff;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: white;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: none;
+}
+
+.submit-button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button:focus {
+  outline: none;
+}
 .footer {
   background: #333;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
 }
 
-/* Media Queries for Mobile Responsiveness */
 /* @media (max-width: 768px) {
   .header h1 {
     font-size: 2rem;
