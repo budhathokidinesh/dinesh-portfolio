@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  width: 100%;
+  height: 100vh; /* Ensures full height */
+  font-family: "Arial", sans-serif;
+  background-color: #0d1117; /* Dark theme */
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(13, 17, 23, 0.9); /* Semi-transparent */
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow-x: hidden;
+}
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.header p {
+  font-size: 16px;
+  opacity: 0.8;
+  padding-top: 10px;
+  color: #00d8ff;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+  gap: 15px;
+  white-space: nowrap;
+}
+nav a:hover {
+  color: #00d8ff; /* React blue highlight */
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  background: rgba(13, 17, 23, 0.7);
+  border-radius: 5px;
+  padding: 15px 15px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.2s;
+}
+.social-icons a:hover {
+  color: #00d8ff;
+  transform: scale(1.1);
+}
+/* Mobile responsiv  */
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .social-icons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+  }
+  .social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  .social-icons a:hover {
+    color: #00d8ff;
+  }
+}
+
+/* About me  */
+.about {
+  padding: 100px 20px 60px;
+  background-color: #121212; /* Dark background */
+  color: white;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #00d8ff;
+}
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 15px;
+}
+.about a {
+  color: #00d8ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.about a:hover {
+  text-decoration: underline;
+}
+/* Skills  */
+.skills {
+  padding: 40px 20px;
+  background-color: #121212;
+  color: white;
+  text-align: center;
+}
+.skills h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #00d8ff; /* Highlight color */
+}
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.skill-item:hover {
+  background-color: #00d8ff; /* Highlight background on hover */
+  transform: scale(1.05);
+}
+
+.skill-icon {
+  font-size: 50px; /* Larger icons for better visibility */
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.skill-item span {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.skill-item:hover span {
+  color: #121212;
+}
+
+//* General styling for the experience section */
+.experience-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Styling for the heading inside experience section */
+.experience-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Styling for the paragraph */
+.experience-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* Styling for the GitHub contributions container */
+.github-contributions {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Heading inside the GitHub contributions box */
+.github-contributions h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Styling for the GitHub contributions chart image */
+.github-contributions img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Styling for the link to GitHub profile */
+.github-profile-link {
+  display: inline-block;
+  background-color: #216e39;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.github-profile-link:hover {
+  background-color: #39d353;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .experience-section h2 {
+    font-size: 2rem;
+  }
+
+  .experience-section p {
+    font-size: 1rem;
+  }
+
+  .github-contributions h2 {
+    font-size: 1.5rem;
+  }
+
+  .github-profile-link {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact button {
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+/* @media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .header nav a {
+    font-size: 0.9rem;
+    margin: 0 10px;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .skills ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .experience-item,
+  .project-item {
+    padding: 15px;
+  }
+
+  .contact form {
+    width: 100%;
+  }
+
+  .contact input,
+  .contact textarea {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .header nav a {
+    font-size: 0.8rem;
+    margin: 0 5px;
+  }
+
+  .social-icons a {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .skills li {
+    font-size: 0.9rem;
+  }
+
+  .experience-item h3,
+  .project-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .experience-item p,
+  .project-item p {
+    font-size: 0.9rem;
+  }
+
+  .contact button {
+    font-size: 0.9rem;
+  }
+} */
